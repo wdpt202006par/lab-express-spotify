@@ -29,8 +29,30 @@ const spotifyApi = new SpotifyWebApi({
 app.get('/' ,(req, res, next)=>{
     res.render('home')
 })
-app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
+
 app.get('/artist-search' , (req, res, next)=>{
-    console.log(req.params)
+    console.log('mot tape par le user', req.query.search)
+
+    // 1. recup le mot tape
+    // 2. interroger spotify pour obtenir la liste des artistes matchant avec le mot
+    // 3. rendre un template des artistes retournes par spotify
+
+    //1.
+
+    const mot = req.query.search
+
+    //2.
+    spotifyApi...then(data => {
+
+        //3.
+        res.render('artist-search-results', {
+          artists: data.body..... // [ {name: 'Madonna', ... }, {}, ...]
+        })
+    })
+
+    
 })
+
+app.listen(3003, () => console.log('My Spotify project running on port 3003 🎧 🥁 🎸 🔊'));
+
 
