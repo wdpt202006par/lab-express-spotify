@@ -1,0 +1,17 @@
+.container {
+    background-image: url("/images/spotify-background.jpeg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    height: 100px;
+    width: 60vw;
+    background: rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
