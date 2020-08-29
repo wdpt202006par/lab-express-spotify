@@ -1,7 +1,9 @@
-<h1>Page résultats</h1>
+<div class="all-artists-cards">{{#each artists.items}}
 
-{{#each artists.items}}
-  {{name}}
+<div class="artists-card">
   <img src="{{images.1.url}}" alt="">
+  {{name}}
   <a href="/albums/{{id}}">View albums</a>
-{{/each}}
+</div>
+
+{{/each}}</div>

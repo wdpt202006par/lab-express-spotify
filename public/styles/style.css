@@ -1,0 +1,63 @@
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/*INDEX*/
+
+.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../images/index-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+form {
+    background: #ffffff78;
+    height: 20vh;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    width: 70%;
+    align-self: center;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 1.5vh;
+    padding: 1vh;
+}
+
+button {
+    align-self: center;    
+    padding: 1vh;
+    width: auto;
+    color: white;
+    background-color: #FF6666;
+    border: 0;
+}
+
+
+/*ARTISTS CARDS*/
+
+.all-artists-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.artists-card {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
