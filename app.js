@@ -31,28 +31,18 @@ app.get('/',(req, res, next) => {
 
 // Route pour pour la recherche
 app.get('/artist-search', (req, res, next) => {
-
-  // {ärtist: }
-
   spotifyApi
   .searchArtists(req.query.artist)
   .then(data => {
     res.render('artist-search-results', {
-      artists: data.body.artists.items // [ {}, {} ]
+      artists: data.body.artists.items // [ {}, {} ] // Les éléments que j'ai mis dans "artist-search-results" se trouvent dans data.body.artists.items 
     })
-
-    //res.send('')
   })
   .catch(err => console.log('The error while searching artists occurred: ', err));
   
 })
 
-
-// Route to display found artists
-// app.get('/artist-search-results', (req, res, next) => {
-//   res.send({name:},{}); // object {artist: "The Beatles"}
-// })
-
+//Route pour obtenir tous les albums de l'artiste qu'on recherche
 app.get('/albums/:artistId',(req,res,next) => {
   spotifyApi
   .getArtistAlbums(req.params.artistId) // utilisation des params
@@ -64,7 +54,7 @@ app.get('/albums/:artistId',(req,res,next) => {
   .catch(err => console.log('Error',err));
 })
 
-
+//Route pour les morceaux de sons de l'album sur lequel on a cliqué
 app.get('/tracks/:albumId',(req,res,next) => {
   spotifyApi
   .getAlbumTracks((req.params.albumId)) // Utilisation des params
