@@ -50,11 +50,21 @@ app.get('/artist-search', (req, res, next) => {
 })
 
 
-
 // Route to display found artists
 // app.get('/artist-search-results', (req, res, next) => {
 //   res.send({name:},{}); // object {artist: "The Beatles"}
 // })
+
+app.get('/albums/:artistId',(req,res,next) => {
+  spotifyApi
+  .getArtistAlbums(req.params.artistId) // utilisation des params
+  .then(data => {
+    res.render('albums', {
+      albums: data.body.items
+    })
+  }) 
+  .catch(err => console.log('Error',err));
+})
 
 
 app.listen(3005, () => console.log('My Spotify project running on port 3005 🎧 🥁 🎸 🔊'));
