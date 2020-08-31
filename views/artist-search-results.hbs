@@ -1,6 +1,8 @@
 {{#each artists}}
 {{this.name}} 
-<img src={{this.images.url}}/>
-<a href=`/albums/${{this.id}}`>View Albums</a>
-{{/each}}
+{{!-- <img src={{this.images[0].url}}/> --}}
 
+<a href=`/albums/{{this.id}}`>View Albums</a> 
+{{!-- PROBLEME : affiche: %60albums/id%60 --}}
+
+{{/each}}
