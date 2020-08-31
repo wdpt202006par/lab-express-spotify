@@ -36,7 +36,7 @@ app.get("/artist-search", function (req, res, next) {
   spotifyApi
     .searchArtists(artistName)
     .then((reponse) => {
-      // console.log("The received data from the API: ", reponse.body.artists.items);
+    console.log("The received data from the API: ", reponse.body.artists.items);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
 
       const artistsList = reponse.body.artists.items; // [ {..}, {} ]
@@ -50,20 +50,21 @@ app.get("/artist-search", function (req, res, next) {
 });
 
 //iteration 4
-app.get("/albums/:artistId", (req, res, next) => {
-  //Pourquoi url apparait avec %60 ?
+app.get('/albums/:artistId', (req, res, next) => {
   //1.récuperer l'id de l'artiste dans l'URL qui apparait quand on clique sur le bouton "view albums"
-  const artistId = req.params; //"string"
+  const artistId = req.params.id;
   //2. interroger l'APi pour récuperer le nom et la photo de chaque album
   spotifyApi
     .getArtistAlbums(artistId)
     .then((reponse) => {
-      console.log("Artist albums", reponse.body.artists.items.images);
-      const artistAlbums = data.body.artists.items.images; //[]
+      console.log("Artist albums", reponse.body.items);
+      const artistAlbums = reponse.body.items; //[]
       //3.rendre le template des albums
-      res.send("artist albums are", { artistAlbums: artistAlbums });
-    })
-    .catch((err) => console.log("The error while searching artists occurred: ", err));
+      res.render("albums", {
+        albums : artistAlbums,
+      });
+      })
+    .catch((err) => console.log("The error while searching artist's albums occurred: ", err));
 });
 
 app.listen(3000, () => console.log("My Spotify project running on port 3000 🎧 🥁 🎸 🔊"));
