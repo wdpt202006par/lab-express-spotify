@@ -1,5 +1,9 @@
-{{#each data}}
-<img src={{this.images.url}}>
-{{this.name}}
-<button>View Album</button>
-{{/each}}
+{{!-- Create link to ALBUMS page with artistId inside the URL --}}
+<div class="artist-card">
+	{{#each artists}}
+		<img id="artist-image" src="{{this.images.0.url}}" />
+		<h3>{{this.name}}</h3>
+		<a href="/albums/{{this.id}}"><button class="btn btn-danger">View Albums</button></a>
+	
+	{{/each}}
+</div>

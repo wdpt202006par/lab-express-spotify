@@ -1,0 +1,17 @@
+<div class="heading">
+	<p>Title</p>
+	<p>Listen</p>
+</div>
+{{#each tracks}}
+	<div class="playlist">
+		<h4>{{this.name}}</h4>
+		<figure>
+			<audio
+					controls
+					src="{{this.preview_url}}"> {{!--Le morceau de chanson--}}
+					Your browser does not support the
+					<code>audio</code> element.
+			</audio>
+		</figure>
+	</div>
+{{/each}} {{!--Ce code va nous rendre chacun des albums de l'artiste --}}
