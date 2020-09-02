@@ -1,13 +1,26 @@
-{{#each tracks}}
-    <div class="track">
-    {{this.name}}
-    <figure>
-            <audio
-                controls
-                src="{{this.preview_url}}"> {{!--Le morceau de chanson--}}
-                Your browser does not support the
-                <code>audio</code> element.
-            </audio>
-</figure>
+<div class="navbar">
+        <div class="title">
+            Title
+        </div>
+        <div class="listen">
+            Listen
+        </div>
 </div>
+
+{{#each tracks}}
+        <div class="container-tracks">
+                <div class="track-name">
+                {{this.name}}
+                </div>
+                <div class="track-audio">
+                <figure>
+                    <audio
+                        controls
+                        src="{{this.preview_url}}"> {{!--Le morceau de chanson--}}
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                </figure>
+            </div>
+        </div>
 {{/each}} {{!--Ce code va nous rendre chacun des albums de l'artiste --}}

@@ -1,10 +1,12 @@
 
 {{#each albums}}
-    <div class="album">
-    {{this.name}}
-    <img src="{{this.images.0.url}}">
-    <p>
-        <a href="/tracks/{{this.id}}">View Tracks</a> {{!-- vers une autre route pour requete research --}} 
-    </p>
-</div>
+    <div class="card-album">
+         <div class="album">
+            <img src="{{this.images.0.url}}">
+            <div class="banniere">
+                {{this.name}}
+                <button type="submit" id="submit"><a href="/tracks/{{this.id}}">View Tracks</a> {{!-- vers une autre route pour requete research --}} </button> 
+            </div>
+        </div>
+    </div>
 {{/each}} {{!--Ce code va nous rendre chacun des albums de l'artiste --}}
