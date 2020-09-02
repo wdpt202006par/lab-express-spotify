@@ -1,0 +1,11 @@
+<div class="card-artiste">
+{{#each artists}}
+        <div class="artist">
+            <img src="{{this.images.0.url}}">
+            <div class="banniere">
+                {{this.name}}
+            <button type="submit" id="submit"><a href="/albums/{{this.id}}">View albums</a></button> {{!-- Les id sont changés automatiquement en fonction des artistes --}} 
+            </div>
+        </div>
+{{/each}}
+</div>
