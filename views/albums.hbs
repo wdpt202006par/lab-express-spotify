@@ -1,6 +1,6 @@
-
+<div class="card-album">
 {{#each albums}}
-    <div class="card-album">
+    
          <div class="album">
             <img src="{{this.images.0.url}}">
             <div class="banniere">
@@ -8,5 +8,6 @@
                 <button type="submit" id="submit"><a href="/tracks/{{this.id}}">View Tracks</a> {{!-- vers une autre route pour requete research --}} </button> 
             </div>
         </div>
-    </div>
+    
 {{/each}} {{!--Ce code va nous rendre chacun des albums de l'artiste --}}
+</div>

@@ -63,18 +63,20 @@ button {
 
 /*artist-search-results page*/
 .artist {
+    margin-top: 1em;
     width: 320px ;
     margin-bottom: 10px;
+    background-color:#576574;
+    
 }
 
 .artist img {
     width: 320px;
-    height: 320px;
+    height: 330px;
     margin-top: 1em;
 }
 
 .card-artiste {
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -118,20 +120,20 @@ button a:hover {
 /*albums results*/
 
 .card-album {
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-left:auto;
     margin-right: auto;
-    width: 1200px;
-     
+    width: 1200px;     
 }
 
+
 .album {
+    margin-top: 1em;
     width: 320px ;
     margin-bottom: 10px;
-    margin-right: 600px ;
+    background-color:#576574;
 }
 
 .album img {
@@ -154,9 +156,11 @@ button a:hover {
     align-items: center;
     font-size: 25px;    
 }
-
+.navbar div:nth-child(1){
+    margin-left: 1em;
+}
 .navbar div:nth-child(2){
-    margin-right: 10em;
+    margin-left: 28em;
 }
 
 .container-tracks {
